@@ -3,9 +3,10 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  console.log('Hi there!!!');
   return (
     <View style={styles.container}>
-      <Text>Some new changed text!</Text>
+      <Text>Some new extra changed text!</Text>
       <StatusBar style="auto" />
     </View>
   );
