@@ -1,24 +1,36 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import RepositoryInfo from './RepositoryInfo';
+import RepositoryStats from './RepositoryStats';
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 5,
+    backgroundColor: 'white'
+  },
+});
 
 const RepositoryItem = ({
+  ownerAvatarUrl,
   fullName,
   description,
   language,
   stargazersCount,
   forksCount,
   reviewCount,
-  ratingAverage
+  ratingAverage,
+  style,
+  ...props
 }) => {
+  const containerStyle = [
+    styles.container,
+    style,
+  ];
+  console.log(ownerAvatarUrl);
   return (
-    <View>
-      <Text>{`Full name: ${fullName}`}</Text>
-      <Text>{`Description: ${description}`}</Text>
-      <Text>{`Language: ${language}`}</Text>
-      <Text>{`Stars: ${stargazersCount}`}</Text>
-      <Text>{`Forks: ${forksCount}`}</Text>
-      <Text>{`Reviews: ${reviewCount}`}</Text>
-      <Text>{`Rating: ${ratingAverage}`}</Text>
+    <View style={containerStyle} {...props}>
+      <RepositoryInfo data={{ ownerAvatarUrl, fullName, description, language }} />
+      <RepositoryStats data={{ stargazersCount, forksCount, reviewCount, ratingAverage }} />
     </View>
   );
 };
