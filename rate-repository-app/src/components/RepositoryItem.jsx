@@ -26,7 +26,6 @@ const RepositoryItem = ({
     styles.container,
     style,
   ];
-  console.log(ownerAvatarUrl);
   return (
     <View style={containerStyle} {...props}>
       <RepositoryInfo data={{ ownerAvatarUrl, fullName, description, language }} />

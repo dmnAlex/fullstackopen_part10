@@ -14,7 +14,7 @@ const RepositoryInfo = ({ data }) => {
       </View>
       <View style={styles.infoTab}>
         <Subheading>{fullName}</Subheading>
-        <Text>{description}</Text>
+        <Text style={styles.secondaryText}>{description}</Text>
         <Text style={styles.languageTab}>{language}</Text>
       </View>
     </View>
@@ -31,10 +31,15 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: theme.colors.primary,
     padding: 5,
+    paddingTop: 0,
+    paddingBottom: 0,
+    marginTop: 10,
     alignSelf: 'flex-start',
   },
   infoTab: {
     padding: 5,
+    flexGrow: 1,
+    flexShrink: 1,
   },
   image: {
     borderRadius: 4,
@@ -43,6 +48,9 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     padding: 20
+  },
+  secondaryText: {
+    color: theme.colors.textSecondary,
   }
 });
 
