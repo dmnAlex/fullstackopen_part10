@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   secondaryText: {
     paddingTop: 0,
     color: theme.colors.textSecondary,
-  }
+  },
 });
 
 export default RepositoryStats;

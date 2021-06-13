@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
     textAlign: 'center',
     textAlignVertical: 'center',
-    color: 'white'
-  }
+    color: 'white',
+  },
 });

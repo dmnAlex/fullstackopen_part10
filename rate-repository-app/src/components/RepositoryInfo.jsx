@@ -47,11 +47,11 @@ const styles = StyleSheet.create({
     height: 50,
   },
   imgContainer: {
-    padding: 20
+    padding: 20,
   },
   secondaryText: {
     color: theme.colors.textSecondary,
-  }
+  },
 });
 
 export default RepositoryInfo;

@@ -6,7 +6,7 @@ import RepositoryStats from './RepositoryStats';
 const styles = StyleSheet.create({
   container: {
     padding: 5,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
 });
 
