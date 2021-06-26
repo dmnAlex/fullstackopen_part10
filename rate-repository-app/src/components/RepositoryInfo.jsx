@@ -13,9 +13,9 @@ const RepositoryInfo = ({ data }) => {
         <Image style={styles.image} source={{ uri: ownerAvatarUrl }} />
       </View>
       <View style={styles.infoTab}>
-        <Subheading>{fullName}</Subheading>
-        <Text style={styles.secondaryText}>{description}</Text>
-        <Text style={styles.languageTab}>{language}</Text>
+        <Subheading testID='fullName'>{fullName}</Subheading>
+        <Text style={styles.secondaryText} testID='description'>{description}</Text>
+        <Text style={styles.languageTab} testID='language'>{language}</Text>
       </View>
     </View>
   );

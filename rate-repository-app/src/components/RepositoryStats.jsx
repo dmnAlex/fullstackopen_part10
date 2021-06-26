@@ -11,18 +11,18 @@ const RepositoryStats = ({ data }) => {
   return (
     <View style={styles.container}>
       <View style={styles.info}>
-        <Text fontWeight='bold'>{toPrescision(stargazersCount)}</Text>
+        <Text fontWeight='bold' testID='stargazersCount'>{toPrescision(stargazersCount)}</Text>
         <Text style={styles.secondaryText}>Stars</Text>
       </View>
       <View style={styles.info}>
-        <Text fontWeight='bold'>{toPrescision(forksCount)}</Text>
+        <Text fontWeight='bold' testID='forksCount'>{toPrescision(forksCount)}</Text>
         <Text style={styles.secondaryText}>Forks</Text>
       </View>
       <View style={styles.info}>
-        <Text fontWeight='bold'>{toPrescision(reviewCount)}</Text>
+        <Text fontWeight='bold' testID='reviewCount'>{toPrescision(reviewCount)}</Text>
         <Text style={styles.secondaryText}>Reviews</Text>
       </View>
-      <View style={styles.info}>
+      <View style={styles.info} testID='ratingAverage'>
         <Text fontWeight='bold'>{toPrescision(ratingAverage)}</Text>
         <Text style={styles.secondaryText}>Rating</Text>
       </View>
