@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable, View, StyleSheet } from 'react-native';
-import FormikTextInput from './FormikTextInput';
-import Subheading from './Subheading';
-import theme from '../theme';
+import FormikTextInput from '../utils/FormikTextInput';
+import Subheading from '../utils/Subheading';
+import theme from '../../theme';
 
 const SignInForm = ({ onSubmit }) => {
 

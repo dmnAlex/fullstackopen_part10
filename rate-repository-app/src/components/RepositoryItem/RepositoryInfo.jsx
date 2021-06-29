@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
-import Subheading from './Subheading';
-import Text from './Text';
-import theme from '../theme';
+import Subheading from '../utils/Subheading';
+import Text from '../utils/Text';
+import theme from '../../theme';
 
 const RepositoryInfo = ({ data }) => {
   const { ownerAvatarUrl, fullName, description, language } = data;

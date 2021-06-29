@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Text from './Text';
-import theme from '../theme';
+import Text from '../utils/Text';
+import theme from '../../theme';
 
 const toPrescision = (number) => number >= 1000 ? (number / 1000).toFixed(1) + 'k' : number;
 

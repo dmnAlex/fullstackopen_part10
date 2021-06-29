@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Constants from 'expo-constants';
-import Subheading from './Subheading';
+import Subheading from '../utils/Subheading';
 import { View, StyleSheet, ScrollView, Pressable } from 'react-native';
-import theme from '../theme';
+import theme from '../../theme';
 import { Link, useHistory } from 'react-router-native';
 import { useApolloClient, useQuery } from '@apollo/client';
-import { USER_INFO } from '../graphql/queries';
-import useAuthStorage from '../hooks/useAuthStorage';
+import { USER_INFO } from '../../graphql/queries';
+import useAuthStorage from '../../hooks/useAuthStorage';
 
 const styles = StyleSheet.create({
   container: {

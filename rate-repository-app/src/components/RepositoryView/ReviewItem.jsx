@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Subheading from './Subheading';
-import Text from './Text';
-import theme from '../theme';
+import Subheading from '../utils/Subheading';
+import Text from '../utils/Text';
+import theme from '../../theme';
 import { format } from 'date-fns';
 
 const ReviewItem = ({ review }) => {

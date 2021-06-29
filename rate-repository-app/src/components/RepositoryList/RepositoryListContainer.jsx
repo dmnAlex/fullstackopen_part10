@@ -1,5 +1,5 @@
 import React from 'react';
-import RepositoryItem from './RepositoryItem';
+import RepositoryItem from '../RepositoryItem';
 import { FlatList, View, StyleSheet } from 'react-native';
 import { Link } from 'react-router-native';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet } from 'react-native';
-import Subheading from './Subheading';
-import theme from '../theme';
+import Subheading from '../utils/Subheading';
+import theme from '../../theme';
 import * as WebBrowser from 'expo-web-browser';
 
 const GitButton = ({ url }) => {
