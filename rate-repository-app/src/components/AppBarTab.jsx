@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Constants from 'expo-constants';
 import Subheading from './Subheading';
 import { View, StyleSheet, ScrollView, Pressable } from 'react-native';
@@ -28,12 +28,17 @@ const AppBarTab = () => {
   const authStorage = useAuthStorage();
   const apolloClient = useApolloClient();
   const history = useHistory();
+  const [isAuthorized, setIsAuthorized] = useState(false);
 
   const signOut = async () => {
     await authStorage.removeAccessToken();
     apolloClient.resetStore();
     history.push('/');
   };
+  
+  useEffect(() => {
+    setIsAuthorized(data && data.authorizedUser !== null);
+  }, [data]);
 
   return (
     <View style={styles.container}>
@@ -41,7 +46,7 @@ const AppBarTab = () => {
         <Link to='/'>
           <Subheading style={styles.text}>Repositories</Subheading>
         </Link>
-        {data && data.authorizedUser !== null
+        {isAuthorized
           ? (
             <Pressable onPress={signOut}>
               <Subheading style={styles.text}>Sign Out</Subheading>

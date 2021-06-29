@@ -27,12 +27,9 @@ const styles = StyleSheet.create({
   },
   languageTab: {
     color: 'white',
-    borderWidth: 1,
     borderRadius: 4,
     backgroundColor: theme.colors.primary,
     padding: 5,
-    paddingTop: 0,
-    paddingBottom: 0,
     marginTop: 10,
     alignSelf: 'flex-start',
   },

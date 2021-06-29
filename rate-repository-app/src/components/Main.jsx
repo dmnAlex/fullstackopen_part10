@@ -5,16 +5,20 @@ import RepositoryList from './RepositoryList';
 import { Route, Switch, Redirect } from 'react-router-native';
 import SignIn from './SignIn';
 import theme from '../theme';
+import RepositoryView from './RepositoryView';
 
 const Main = () => (
   <View style={styles.container}>
     <AppBar />
     <Switch>
-      <Route path='/' exact>
-        <RepositoryList />
+      <Route path='/repository/:id'>
+        <RepositoryView />
       </Route>
       <Route path='/sign' exact>
         <SignIn />
+      </Route>
+      <Route path='/' exact>
+        <RepositoryList />
       </Route>
       <Redirect to='/' />
     </Switch>
