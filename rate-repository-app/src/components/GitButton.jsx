@@ -2,15 +2,15 @@ import React from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 import Subheading from './Subheading';
 import theme from '../theme';
-import * as Linking from 'expo-linking';
+import * as WebBrowser from 'expo-web-browser';
 
 const GitButton = ({ url }) => {
-  const onPress = () => {
-    Linking.openURL(url);
+  const handlePress = () => {
+    WebBrowser.openBrowserAsync(url);
   };
 
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={handlePress}>
       <Subheading style={styles.button}>Open in Github</Subheading>
     </Pressable>
   );
