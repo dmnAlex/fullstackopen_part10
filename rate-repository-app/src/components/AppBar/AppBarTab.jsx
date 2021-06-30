@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.textPrimary,
     padding: 5,
   },
+  subcontainer: {
+    flexDirection: 'row',
+  },
   text: {
     color: 'white',
     padding: 5,
@@ -35,7 +38,7 @@ const AppBarTab = () => {
     apolloClient.resetStore();
     history.push('/');
   };
-  
+
   useEffect(() => {
     setIsAuthorized(data && data.authorizedUser !== null);
   }, [data]);
@@ -43,19 +46,28 @@ const AppBarTab = () => {
   return (
     <View style={styles.container}>
       <ScrollView horizontal contentContainerStyle={styles.scrollview}>
-        <Link to='/'>
-          <Subheading style={styles.text}>Repositories</Subheading>
-        </Link>
+        <View>
+          <Link to='/'>
+            <Subheading style={styles.text}>Repositories</Subheading>
+          </Link>
+        </View>
         {isAuthorized
           ? (
-            <Pressable onPress={signOut}>
-              <Subheading style={styles.text}>Sign Out</Subheading>
-            </Pressable>
+            <View style={styles.subcontainer}>
+              <Link to='/review'>
+                <Subheading style={styles.text}>Create a review</Subheading>
+              </Link>
+              <Pressable onPress={signOut}>
+                <Subheading style={styles.text}>Sign Out</Subheading>
+              </Pressable>
+            </View>
           )
           : (
-            <Link to='/sign'>
-              <Subheading style={styles.text}>Sign In</Subheading>
-            </Link>
+            <View>
+              <Link to='/sign'>
+                <Subheading style={styles.text}>Sign In</Subheading>
+              </Link>
+            </View>
           )}
       </ScrollView>
     </View>

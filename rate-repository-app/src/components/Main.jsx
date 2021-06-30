@@ -6,6 +6,7 @@ import { Route, Switch, Redirect } from 'react-router-native';
 import SignIn from './SignIn';
 import theme from '../theme';
 import RepositoryView from './RepositoryView';
+import Review from './Review';
 
 const Main = () => (
   <View style={styles.container}>
@@ -16,6 +17,9 @@ const Main = () => (
       </Route>
       <Route path='/sign' exact>
         <SignIn />
+      </Route>
+      <Route path='/review'>
+        <Review />
       </Route>
       <Route path='/' exact>
         <RepositoryList />

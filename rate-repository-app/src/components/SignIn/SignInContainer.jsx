@@ -11,12 +11,12 @@ const initialValues = {
 const validationSchema = yup.object().shape({
   username: yup
     .string()
-    .min(3)
-    .required(),
+    .min(3, 'Value must be at least 3 characters in length')
+    .required('Username is required'),
   password: yup
     .string()
-    .min(3)
-    .required(),
+    .min(3, 'Value must be at least 3 characters in length')
+    .required('Password is required'),
 });
 
 const SignInContainer = ({ onSubmit }) => {
