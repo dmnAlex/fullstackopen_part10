@@ -7,10 +7,10 @@ const sortingDict = {
   'rating_desc': { orderBy: 'RATING_AVERAGE', orderDirection: 'DESC' },
 };
 
-const useRepositories = (sorting) => {
+const useRepositories = (sorting, queryDebounce) => {
   const { data, loading, refetch } = useQuery(GET_REPOSITORIES, {
     fetchPolicy: 'cache-and-network',
-    variables: { ...sortingDict[sorting] },
+    variables: { ...sortingDict[sorting], searchKeyword: queryDebounce },
   });
 
   const repositories = data?.repositories;
