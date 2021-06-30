@@ -63,9 +63,12 @@ const AppBarTab = () => {
             </View>
           )
           : (
-            <View>
-              <Link to='/sign'>
+            <View style={styles.subcontainer}>
+              <Link to='/signin'>
                 <Subheading style={styles.text}>Sign In</Subheading>
+              </Link>
+              <Link to='/signup'>
+                <Subheading style={styles.text}>Sign Up</Subheading>
               </Link>
             </View>
           )}
