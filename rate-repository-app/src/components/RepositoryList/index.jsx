@@ -7,7 +7,11 @@ const RepositoryList = () => {
   const [sorting, setSorting] = useState('date_desc');
   const [query, setQuery] = useState('');
   const [queryDebounce] = useDebounce(query, 500);
-  const { repositories } = useRepositories(sorting, queryDebounce);
+  const { repositories, fetchMore } = useRepositories(sorting, queryDebounce);
+
+  const onEndReach = () => {
+    fetchMore();
+  };
 
   return <RepositoryListContainer
     repositories={repositories}
@@ -15,6 +19,7 @@ const RepositoryList = () => {
     setSorting={setSorting}
     query={query}
     setQuery={setQuery}
+    onEndReach={onEndReach}
   />;
 };
 

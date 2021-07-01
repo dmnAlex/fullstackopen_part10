@@ -37,7 +37,7 @@ export class RepositoryListContainer extends React.Component {
   };
 
   render() {
-    const { repositories } = this.props;
+    const { repositories, onEndReach } = this.props;
 
     const repositoryNodes = repositories
       ? repositories.edges.map(edge => edge.node)
@@ -65,6 +65,8 @@ export class RepositoryListContainer extends React.Component {
         ItemSeparatorComponent={ItemSeparator}
         renderItem={renderItem}
         keyExtractor={item => item.id}
+        onEndReached={onEndReach}
+        onEndReachedThreshold={0.5}
       />
     );
   }
