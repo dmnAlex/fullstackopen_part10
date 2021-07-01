@@ -15,7 +15,9 @@ const ReviewItem = ({ review }) => {
       </View>
       <View style={styles.infoContainer}>
         <Subheading>{review.user.username}</Subheading>
-        <Text style={styles.date}>{format(new Date(review.createdAt), 'dd.MM.yyyy')}</Text>
+        <Text style={styles.date}>
+          {format(new Date(review.createdAt), 'dd.MM.yyyy')}
+        </Text>
         <Text style={styles.text}>{review.text}</Text>
       </View>
     </View>

@@ -11,7 +11,11 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const SingleRepository = ({ repository }) => {
+const SingleRepository = ({ repository, onEndReached }) => {
+  if (!repository) {
+    return null;
+  }
+
   const { reviews, ...remainingData} = repository;
 
   return (
@@ -21,6 +25,8 @@ const SingleRepository = ({ repository }) => {
       keyExtractor={({ id }) => id}
       ListHeaderComponent={() => <RepositoryItem {...remainingData} />}
       ItemSeparatorComponent={ItemSeparator}
+      onEndReached={onEndReached}
+      onEndReachedThreshold={0.5}
     />
   );
 };

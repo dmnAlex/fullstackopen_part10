@@ -4,17 +4,17 @@ import { CORE_REPOSITORY_FIELDS } from './fragments';
 export const GET_REPOSITORIES = gql`
   ${CORE_REPOSITORY_FIELDS}
   query getRepositories(
-    $orderBy: AllRepositoriesOrderBy
-    $orderDirection: OrderDirection
-    $searchKeyword: String
-    $first: Int
+    $orderBy: AllRepositoriesOrderBy,
+    $orderDirection: OrderDirection,
+    $searchKeyword: String,
+    $first: Int,
     $after: String
   ) {
     repositories(
-      orderBy: $orderBy
-      orderDirection: $orderDirection
-      searchKeyword: $searchKeyword
-      first: $first
+      orderBy: $orderBy,
+      orderDirection: $orderDirection,
+      searchKeyword: $searchKeyword,
+      first: $first,
       after: $after
     ) {
       edges {
@@ -35,10 +35,14 @@ export const GET_REPOSITORIES = gql`
 
 export const GET_REPOSITORY = gql`
   ${CORE_REPOSITORY_FIELDS}
-  query getRepository($id: ID!) {
+  query getRepository(
+    $id: ID!,
+    $first: Int,
+    $after: String
+  ) {
     repository(id: $id) {
       url
-      reviews {
+      reviews(first: $first, after: $after) {
         edges {
           node {
             id
@@ -49,6 +53,12 @@ export const GET_REPOSITORY = gql`
               username
             }
           }
+          cursor
+        }
+        pageInfo {
+          endCursor
+          startCursor
+          hasNextPage
         }
       }
       ...CoreRepositoryFields

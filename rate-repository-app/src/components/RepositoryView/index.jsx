@@ -5,9 +5,16 @@ import SingleRepository from './SingleRepository';
 
 const RepositoryView = () => {
   const { id } = useParams();
-  const { repository, loading } = useRepository(id);
+  const { repository, fetchMore } = useRepository(id);
 
-  return loading ? null : <SingleRepository repository={repository} />;
+  const onEndReached = () => {
+    fetchMore();
+  };
+
+  return <SingleRepository
+    repository={repository}
+    onEndReached={onEndReached}
+  />;
 };
 
 export default RepositoryView;

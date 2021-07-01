@@ -38,6 +38,10 @@ export class RepositoryListContainer extends React.Component {
 
   render() {
     const { repositories, onEndReach } = this.props;
+    
+    if (!repositories) {
+      return null;
+    }
 
     const repositoryNodes = repositories
       ? repositories.edges.map(edge => edge.node)
