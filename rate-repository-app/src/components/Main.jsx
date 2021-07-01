@@ -8,6 +8,7 @@ import theme from '../theme';
 import RepositoryView from './RepositoryView';
 import Review from './Review';
 import SignUp from './SignUp';
+import ReviewList from './ReviewList';
 
 const Main = () => (
   <View style={styles.container}>
@@ -24,6 +25,9 @@ const Main = () => (
       </Route>
       <Route path='/review' exact>
         <Review />
+      </Route>
+      <Route path='/myreviews' exact>
+        <ReviewList />
       </Route>
       <Route path='/' exact>
         <RepositoryList />

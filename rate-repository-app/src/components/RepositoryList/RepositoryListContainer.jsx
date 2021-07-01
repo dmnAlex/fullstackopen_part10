@@ -1,17 +1,10 @@
 import React from 'react';
 import RepositoryItem from '../RepositoryItem';
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { Link } from 'react-router-native';
 import SortingMenu from './SortingMenu';
 import FilterBar from './FilterBar';
-
-const styles = StyleSheet.create({
-  separator: {
-    height: 10,
-  },
-});
-
-const ItemSeparator = () => <View style={styles.separator} />;
+import ItemSeparator from '../utils/ItemSeparator';
 
 export class RepositoryListContainer extends React.Component {
   renderHeader = () => {
@@ -38,7 +31,7 @@ export class RepositoryListContainer extends React.Component {
 
   render() {
     const { repositories, onEndReach } = this.props;
-    
+
     if (!repositories) {
       return null;
     }

@@ -4,9 +4,9 @@ import Subheading from '../utils/Subheading';
 import { View, StyleSheet, ScrollView, Pressable } from 'react-native';
 import theme from '../../theme';
 import { Link, useHistory } from 'react-router-native';
-import { useApolloClient, useQuery } from '@apollo/client';
-import { USER_INFO } from '../../graphql/queries';
+import { useApolloClient } from '@apollo/client';
 import useAuthStorage from '../../hooks/useAuthStorage';
+import useUser from '../../hooks/useUser';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 });
 
 const AppBarTab = () => {
-  const { data } = useQuery(USER_INFO);
+  const { authorizedUser } = useUser();
   const authStorage = useAuthStorage();
   const apolloClient = useApolloClient();
   const history = useHistory();
@@ -40,8 +40,8 @@ const AppBarTab = () => {
   };
 
   useEffect(() => {
-    setIsAuthorized(data && data.authorizedUser !== null);
-  }, [data]);
+    setIsAuthorized(authorizedUser !== null);
+  }, [authorizedUser]);
 
   return (
     <View style={styles.container}>
@@ -56,6 +56,9 @@ const AppBarTab = () => {
             <View style={styles.subcontainer}>
               <Link to='/review'>
                 <Subheading style={styles.text}>Create a review</Subheading>
+              </Link>
+              <Link to='/myreviews'>
+                <Subheading style={styles.text}>My reviews</Subheading>
               </Link>
               <Pressable onPress={signOut}>
                 <Subheading style={styles.text}>Sign Out</Subheading>
