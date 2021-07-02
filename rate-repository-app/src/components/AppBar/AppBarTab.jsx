@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Constants from 'expo-constants';
 import Subheading from '../utils/Subheading';
-import { View, StyleSheet, ScrollView, Pressable } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import theme from '../../theme';
 import { Link, useHistory } from 'react-router-native';
 import { useApolloClient } from '@apollo/client';
@@ -47,30 +47,30 @@ const AppBarTab = () => {
     <View style={styles.container}>
       <ScrollView horizontal contentContainerStyle={styles.scrollview}>
         <View>
-          <Link to='/'>
+          <Link to='/' component={TouchableOpacity}>
             <Subheading style={styles.text}>Repositories</Subheading>
           </Link>
         </View>
         {isAuthorized
           ? (
             <View style={styles.subcontainer}>
-              <Link to='/review'>
+              <Link to='/review' component={TouchableOpacity}>
                 <Subheading style={styles.text}>Create a review</Subheading>
               </Link>
-              <Link to='/myreviews'>
+              <Link to='/myreviews' component={TouchableOpacity}>
                 <Subheading style={styles.text}>My reviews</Subheading>
               </Link>
-              <Pressable onPress={signOut}>
+              <TouchableOpacity onPress={signOut}>
                 <Subheading style={styles.text}>Sign Out</Subheading>
-              </Pressable>
+              </TouchableOpacity>
             </View>
           )
           : (
             <View style={styles.subcontainer}>
-              <Link to='/signin'>
+              <Link to='/signin' component={TouchableOpacity}>
                 <Subheading style={styles.text}>Sign In</Subheading>
               </Link>
-              <Link to='/signup'>
+              <Link to='/signup' component={TouchableOpacity}>
                 <Subheading style={styles.text}>Sign Up</Subheading>
               </Link>
             </View>

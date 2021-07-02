@@ -3,7 +3,7 @@ import useUser from '../../hooks/useUser';
 import ReviewListContainer from './ReviewListContainer';
 
 const ReviewList = () => {
-  const { authorizedUser, fetchMore } = useUser(true);
+  const { authorizedUser, fetchMore, refetch } = useUser(true);
   const reviews = authorizedUser?.reviews;
 
   const onEndReach = () => {
@@ -11,7 +11,11 @@ const ReviewList = () => {
   };
 
   return (
-    <ReviewListContainer reviews={reviews} onEndReach={onEndReach} />
+    <ReviewListContainer
+      reviews={reviews}
+      onEndReach={onEndReach}
+      refetch={refetch}
+    />
   );
 };
 

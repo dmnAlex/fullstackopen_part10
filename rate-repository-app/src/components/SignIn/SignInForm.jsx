@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, View, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import FormikTextInput from '../utils/FormikTextInput';
 import Subheading from '../utils/Subheading';
 import theme from '../../theme';
@@ -10,9 +10,9 @@ const SignInForm = ({ onSubmit }) => {
     <View style={styles.container}>
       <FormikTextInput name='username' placeholder='Username' testID='usernameField' />
       <FormikTextInput name='password' placeholder='Password' secureTextEntry testID='passwordField' />
-      <Pressable onPress={onSubmit} testID='submitButton'>
+      <TouchableOpacity onPress={onSubmit} testID='submitButton'>
         <Subheading style={styles.button}>Sign in</Subheading>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, View, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import FormikTextInput from '../utils/FormikTextInput';
 import Subheading from '../utils/Subheading';
 import theme from '../../theme';
@@ -11,9 +11,9 @@ const ReviewForm = ({ onSubmit }) => {
       <FormikTextInput name='repositoryName' placeholder='Repository name' />
       <FormikTextInput name='reviewRating' placeholder='Rating between 0 and 100' />
       <FormikTextInput name='reviewText' placeholder='Review' multiline />
-      <Pressable onPress={onSubmit}>
+      <TouchableOpacity onPress={onSubmit}>
         <Subheading style={styles.button}>Create a review</Subheading>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };
