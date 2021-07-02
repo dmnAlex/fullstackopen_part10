@@ -15,7 +15,7 @@ const RepositoryInfo = ({ data }) => {
       <View style={styles.infoTab}>
         <Subheading testID='fullName'>{fullName}</Subheading>
         <Text style={styles.secondaryText} testID='description'>{description}</Text>
-        <Text style={styles.languageTab} testID='language'>{language}</Text>
+        <Text style={styles.languageTab} testID='language'>{language || 'Unknown'}</Text>
       </View>
     </View>
   );
